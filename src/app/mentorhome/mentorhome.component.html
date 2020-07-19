@@ -1,0 +1,202 @@
+<header class="header-6">
+    <div class="branding header-nav">
+        <a  class="active nav-link nav-text" style="color: white;">NCG Bootcamp</a>
+        <a routerLink="/userhome" routerLinkActive="active" class="nav-link nav-text" style="color: white;">DASHBOARD</a>
+        <a href="/leaderboard" class="nav-link nav-text" style="color: white;">LEADERBOARD</a>
+    
+    </div>
+    
+    <div class="header-actions">
+        
+        
+        <a href="javascript://" class="nav-link nav-text" style="color: white;">LOGOUT</a>
+        <a href="javascript://" class="nav-link nav-icon" aria-label="settings">
+            <clr-icon shape="cog"></clr-icon>
+            
+        </a>
+    </div>
+</header>
+<div class="card-header head sch" style="text-align: center;">
+   <h4> WELCOME MENTOR!</h4><br>
+            </div>
+<div class="container">
+<clr-tabs>
+    <clr-tab>
+        <button clrTabLink class="btn btn-primary dash" >GRADE ASSIGNMENTS</button>
+            <clr-tab-content *clrIfActive>
+                <br>
+
+               <div class="clr-col-lg-12 clr-col-12">
+<div class="clr-row heading">
+    <div class="clr-col-lg-3 clr-col-12">
+        <h5> Assignment ID</h5>
+    </div>
+    <div class="clr-col-lg-3 clr-col-12">
+        <h5> Submission By</h5>
+    </div>
+    <div class="clr-col-lg-3 clr-col-12">
+        <h5> Max Score</h5>
+    </div>
+    </div></div>
+<!--<div class="clr-row" *ngFor="let assign of assignments;let i=index;">    to be done using for loop-->
+    <div class="clr-row" >
+    <div class="clr-col-lg-10 clr-col-12">
+        <div class="card assign">
+            <div class="clr-row">
+                <div class="clr-col-lg-3 clr-col-12">
+            <div class="card-header crdhd" style="text-align: center;">
+             <!--<h4> Assignment {{assign.assignId}}</h4>-->
+                <h4> Assignment 4</h4>
+            </div>
+                </div>
+                <div class="clr-col-lg-3 clr-col-12" >
+            <div class="card-header crdhd" style="text-align: center;">
+             <!--<h5> {{assign.submittedby}}</h5>-->
+                <h5> Jatin Aswal </h5>
+            </div>
+                </div>
+                <div class="clr-col-lg-2 clr-col-12" style="text-align: center;">
+                    <div class="card-header crdhd">
+           <!-- <h5>{{assign.maxScore}}</h5>-->
+                        <h5>100</h5>
+            </div>
+                </div>
+            </div>
+            <hr>
+            <div class="card-block">
+                <div class="card-media-block">
+                    <div class="card-text">
+                          Created by : XYZ User
+                    </div>
+                </div>
+                <div class="card-text">
+                    Description : Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse diam nibh, varius at massa sed, scelerisque lacinia nisi. Morbi ultricies fringilla fringilla. Proin rhoncus massa ipsum, vel ullamcorper purus maximus quis. Donec molestie tellus vitae neque blandit dignissim. Suspendisse quis leo tincidunt, viverra nisi sed, pharetra odio. Nullam tincidunt neque a magna volutpat, eu bibendum ipsum auctor. Duis eu velit ante.                 </div>
+            </div>
+            
+        </div>
+    </div>
+       
+    <div class="clr-col-lg-2 clr-col-12">
+        <button class="card btn btn-primary delbtn" type="button" onclick="window.open('/assets/demo.pdf', '_blank')" >VIEW SUBMISSION</button>
+        <button class="card btn btn-primary delbtn" type="button" (click)="updateassign(assign.assignId)">VIEW ASSIGNMENT</button>
+        <button class="card btn btn-primary delbtn" type="button" (click)="deleteassign(assign.assignId)">GRADE </button>
+    </div>
+    
+</div>
+
+            </clr-tab-content>
+        <br><br>
+</clr-tab>
+       
+    <clr-tab>
+        <button clrTabLink class="btn btn-primary dash" >GRADED ASSIGNMENTS</button>
+             <clr-tab-content *clrIfActive="true">  <!--FOR LOOP-->
+                 <br>
+                 
+                 <div class="clr-col-lg-12 clr-col-12">
+<div class="clr-row heading">
+    <div class="clr-col-lg-3 clr-col-12">
+        <h5> Assignment ID</h5>
+    </div>
+    <div class="clr-col-lg-3 clr-col-12">
+        <h5> Submission By</h5>
+    </div>
+    <div class="clr-col-lg-3 clr-col-12">
+        <h5> Score Given</h5>
+    </div>
+    <div class="clr-col-lg-3 clr-col-12">
+        <h5> Max Score</h5>
+    </div>
+    </div></div>
+<!--<div class="clr-row" *ngFor="let assign of assignments;let i=index;">    to be done using for loop-->
+    <div class="clr-row" >
+    <div class="clr-col-lg-10 clr-col-12">
+        <div class="card assign" style="margin-left: 60px;">
+            <div class="clr-row">
+                <div class="clr-col-lg-3 clr-col-12">
+            <div class="card-header crdhd" style="text-align: center;">
+             <!--<h4> Assignment {{assign.assignId}}</h4>-->
+                <h4> Assignment 4</h4>
+            </div>
+                </div>
+                <div class="clr-col-lg-3 clr-col-12" >
+            <div class="card-header crdhd" style="text-align: center;">
+             <!--<h5> {{assign.submittedby}}</h5>-->
+                <h5> Jatin Aswal </h5>
+            </div>
+                </div>
+                <div class="clr-col-lg-3 clr-col-12" style="text-align: center;">
+                    <div class="card-header crdhd">
+           <!-- <h5>{{assign.maxScore}}</h5>-->
+                        <h5>80</h5>
+            </div>
+                </div>
+                <div class="clr-col-lg-3 clr-col-12" style="text-align: center;">
+                    <div class="card-header crdhd">
+           <!-- <h5>{{assign.maxScore}}</h5>-->
+                        <h5>100</h5>
+            </div>
+                </div>
+            </div>
+            <hr>
+            <div class="card-block">
+                <div class="card-media-block">
+                    <div class="card-text">
+                          Created by : XYZ User
+                    </div>
+                    
+                </div>
+                <div class="card-text">
+                    Description : Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse diam nibh, varius at massa sed, scelerisque lacinia nisi. Morbi ultricies fringilla fringilla. Proin rhoncus massa ipsum, vel ullamcorper purus maximus quis. Donec molestie tellus vitae neque blandit dignissim. Suspendisse quis leo tincidunt, viverra nisi sed, pharetra odio. Nullam tincidunt neque a magna volutpat, eu bibendum ipsum auctor. Duis eu velit ante.                 </div>
+            </div>
+            
+        </div>
+    </div>
+       
+    <div class="clr-col-lg-2 clr-col-12">
+        
+        <button class="card btn btn-primary delbtn" type="button" (click)="fn()">UPDATE SCORE</button>
+       
+    </div>
+    
+</div>
+                  
+
+            </clr-tab-content>
+    </clr-tab>
+
+    
+    <clr-tab>
+         <button clrTabLink class="btn btn-primary dash" >TRACK PROJECT PROGRESS</button>
+             <clr-tab-content *clrIfActive="true"> <!--FOR LOOP-->
+                 <br>
+                     <div class="card-block commentbox">
+                <div class="card-media-block">
+                    <div class="card-text">
+                          <p>Comment by : XYZ User</p>
+                        <p>Date added : 19-07-2020</p>
+                    </div>
+                </div>
+                <div class="card-text">
+                    Description : Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse diam nibh, varius at massa sed, scelerisque lacinia nisi. Morbi ultricies fringilla fringilla. Proin rhoncus massa ipsum, vel ullamcorper purus maximus quis.            </div>
+            </div>
+                 
+                 <div class="card-block commentbox">
+                <div class="card-media-block">
+                    <div class="card-text">
+                       <p> Comment by : Hey User</p>
+                         <p>Date added : 19-07-2020</p>
+                    </div>
+                </div>
+                <div class="card-text">
+                    Description : Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse diam nibh, varius at massa sed, scelerisque lacinia nisi.      </div>
+            </div>
+
+            </clr-tab-content>
+    </clr-tab>
+
+    
+    
+</clr-tabs>
+</div>
+

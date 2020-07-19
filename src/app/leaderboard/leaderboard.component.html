@@ -1,0 +1,131 @@
+<header class="header-6">
+    <div class="branding header-nav">
+        <a  class="active nav-link nav-text" style="color: white;">NCG Bootcamp</a>
+        <a routerLink="/userhome" routerLinkActive="active" class="nav-link nav-text" style="color: white;">DASHBOARD</a>
+        <a href="/assignment" class="nav-link nav-text" style="color: white;">ASSIGNMENTS</a>
+         <a href="/score" class="nav-link nav-text" style="color: white;">SCORES</a>
+        <a href="/schedule" class="nav-link nav-text" style="color: white;">SCHEDULE</a>
+        <a href="/leaderboard" class="active nav-link nav-text" style="color: white;">LEADERBOARD</a>
+    
+    </div>
+    
+    <div class="header-actions">
+        
+        
+        <a href="javascript://" class="nav-link nav-text" style="color: white;">LOGOUT</a>
+        <a href="javascript://" class="nav-link nav-icon" aria-label="settings">
+            <clr-icon shape="cog"></clr-icon>
+            
+        </a>
+    </div>
+</header>
+<br>
+<div class="card-header head sch" style="text-align: center;">
+   <h4> LEADERBOARD</h4><br>
+            </div>
+
+<div class="container">
+<clr-tabs>
+    <clr-tab>
+        <button clrTabLink class="btn btn-primary dash" >INDIVIDUAL</button>
+            <clr-tab-content *clrIfActive>
+               <table class="table">
+    <thead>
+        <tr>
+            <th>RANK</th>
+            <th>EMPID</th>
+            <th>NAME</th>
+            <th>SCORE</th>
+        </tr>
+    </thead>
+    <tbody *ngFor="let position of positions;let i=index;">
+        <tr>
+            <td>{{position.rank}}</td>
+            <td>{{position.email}}</td>
+            <td>HEY <clr-icon shape="bitcoin" title="bitcoin"></clr-icon></td>
+            <td>{{position.score}}</td>
+        </tr>
+        
+        <!--
+        <tr>
+            <td>2</td>
+            <td>5</td>
+            <td>HI <clr-icon shape="euro" title="euro"></clr-icon></td>
+            <td>V</td>
+        </tr>
+        <tr>
+            <td>3</td>
+            <td>A</td>
+            <td>YO <clr-icon shape="dollar" title="dollar"></clr-icon></td>
+            <td>X</td>
+        </tr>
+        <tr>
+            <td>4</td>
+            <td>F</td>
+            <td>BYE <clr-icon shape="coin-bag" title="coin-bag"></clr-icon></td>
+            <td>XV</td>
+        </tr>
+        <tr>
+            <td>5</td>
+            <td>F</td>
+            <td>1111</td>
+            <td>XV</td>
+        </tr>-->
+    </tbody>
+</table>
+            </clr-tab-content>
+</clr-tab>
+
+    <clr-tab>
+        <button clrTabLink class="btn btn-primary dash" >TEAM</button>
+             <clr-tab-content *clrIfActive="true">
+               <table class="table">
+    <thead>
+        <tr>
+            <th>RANK</th>
+            <th>TEAMID</th>
+            <th>NAME</th>
+            <th>SCORE</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>1</td>
+            <td>100</td>
+            <td>1</td>
+            <td>I</td>
+        </tr>
+        <tr>
+            <td>2</td>
+            <td>102</td>
+            <td>101</td>
+            <td>V</td>
+        </tr>
+        <tr>
+            <td>3</td>
+            <td>105</td>
+            <td>1010</td>
+            <td>X</td>
+        </tr>
+        <tr>
+            <td>4</td>
+            <td>120</td>
+            <td>1111</td>
+            <td>XV</td>
+        </tr>
+        <tr>
+            <td>5</td>
+            <td>F</td>
+            <td>1111</td>
+            <td>XV</td>
+        </tr>
+    </tbody>
+</table>
+            </clr-tab-content>
+    </clr-tab>
+
+</clr-tabs>
+</div>
+
+
+

@@ -1,0 +1,321 @@
+<header class="header-6">
+    <div class="branding header-nav">
+        <a  class="active nav-link nav-text" style="color: white;">NCG Bootcamp</a>
+        <a routerLink="/userhome" routerLinkActive="active" class="nav-link nav-text" style="color: white;">DASHBOARD</a>
+        <a href="/leaderboard" class="nav-link nav-text" style="color: white;">LEADERBOARD</a>
+    
+    </div>
+    
+    <div class="header-actions">
+        
+        
+        <a href="javascript://" class="nav-link nav-text" style="color: white;">LOGOUT</a>
+        <a href="javascript://" class="nav-link nav-icon" aria-label="settings">
+            <clr-icon shape="cog"></clr-icon>
+            
+        </a>
+    </div>
+</header>
+<div class="card-header head sch" style="text-align: center;">
+   <h4> WELCOME ADMIN!</h4><br>
+            </div>
+<div class="container">
+<clr-tabs>
+    <clr-tab>
+        <button clrTabLink class="btn btn-primary dash" >MANAGE ASSIGNMENTS</button>
+            <clr-tab-content *clrIfActive>
+                <br>
+                  <button class="card btn btn-primary" style="letter-spacing: 2px;left: 25% !important;" (click)="isModalVisible = true">CREATE NEW ASSIGNMENT</button>
+
+               <div class="clr-col-lg-12 clr-col-12">
+<div class="clr-row heading">
+    <div class="clr-col-lg-3 clr-col-12">
+        <h5> Assignment ID</h5>
+    </div>
+    <div class="clr-col-lg-3 clr-col-12">
+        <h5> Submission Deadline</h5>
+    </div>
+    <div class="clr-col-lg-3 clr-col-12" >
+        <h5> Assignment Difficulty</h5>
+    </div>
+    <div class="clr-col-lg-3 clr-col-12">
+        <h5> Max Score</h5>
+    </div>
+    </div></div>
+<div class="clr-row" *ngFor="let assign of assignments;let i=index;" >   <!-- to be done using for loop-->
+    <div class="clr-col-lg-10 clr-col-12">
+        <div class="card assign">
+            <div class="clr-row">
+                <div class="clr-col-lg-4 clr-col-12" >
+            <div class="card-header crdhd" >
+             <h4> Assignment {{assign.assignId}}</h4>
+            </div>
+                </div>
+                <div class="clr-col-lg-4 clr-col-12" >
+            <div class="card-header crdhd" >
+             <h5> {{assign.deadline}}</h5>
+            </div>
+                </div>
+                <div class="clr-col-lg-2 clr-col-12" >
+            <div class="card-header crdhd" >
+             <h5> {{assign.difficulty}}</h5> 
+            </div></div><div class="clr-col-lg-2 clr-col-12" >
+                    <div class="card-header crdhd">
+            <h5>{{assign.maxScore}}</h5>
+            </div>
+                </div>
+            </div>
+            <hr>
+            <div class="card-block">
+                <div class="card-media-block">
+                    <div class="card-text">
+                          Created by : {{assign.creater}}
+                    </div>
+                </div>
+                <div class="card-text">
+                    Description : {{assign.description}}                </div>
+            </div>
+            
+        </div>
+    </div>
+    <div class="clr-col-lg-2 clr-col-12">
+        <button class="card btn btn-primary delbtn" type="button" (click)="updateassign(assign.assignId)"><clr-icon shape="plus"></clr-icon></button>
+        <button class="card btn btn-primary delbtn" type="button" (click)="deleteassign(assign.assignId)"><clr-icon shape="trash"></clr-icon></button>
+    </div>
+    
+</div>
+
+            </clr-tab-content>
+        <br><br>
+</clr-tab>
+
+    <clr-tab>
+        <button clrTabLink class="btn btn-primary dash" >MANAGE SCHEDULE</button>
+             <clr-tab-content *clrIfActive="true">
+                 <br>
+                  <button class="card btn btn-primary" style="letter-spacing: 2px;left: 25% !important;text-align: center !important;" (click)="isModal1Visible = true">CREATE NEW SCHEDULE</button>
+
+            </clr-tab-content>
+    </clr-tab>
+
+    
+    <clr-tab>
+         <button clrTabLink class="btn btn-primary dash" >MANAGE GROUPS</button>
+             <clr-tab-content *clrIfActive="true"> <br>
+              <button class="card btn btn-primary" style="letter-spacing: 2px;left: 25% !important;" (click)="schedule()">CREATE GROUPS</button>
+                 
+                 
+                 
+                  <div class="clr-col-lg-12 clr-col-12">
+<div class="clr-row heading">
+    <div class="clr-col-lg-6 clr-col-12" >
+        <h5> Team ID</h5>
+    </div>
+    <div class="clr-col-lg-6 clr-col-12">
+        <h5> Members</h5>
+    </div>
+    </div>
+<div class="clr-row" *ngFor="let team of teams;let i=index;">   <!-- to be done using for loop-->
+    <div class="clr-col-lg-10 clr-col-12">
+        <div class="card assign">
+            <div class="clr-row">
+                <div class="clr-col-lg-6 clr-col-12">
+            <div class="card-header crdhd" style="text-align: center;">
+             <h4> {{team.teamId}}</h4>
+            </div>
+                </div>
+                <div class="clr-col-lg-6 clr-col-12" >
+            <div class="card-header crdhd" style="text-align: center;" *ngFor="let member of team.members">
+             <h5> {{member}}</h5>
+            </div>
+                </div>
+               
+            </div>
+            <hr>
+          
+        </div>
+    </div>
+    <div class="clr-col-lg-2 clr-col-12">
+        <button class="card btn btn-primary delbtn" type="button" (click)="fn()">MANAGE</button>
+    </div>
+    
+                      </div></div>
+                 
+                 
+                 
+
+            </clr-tab-content>
+    </clr-tab>
+
+    
+    
+</clr-tabs>
+</div>
+
+<!--
+      id: [''],
+      creator: [''],
+      description: [''],
+      score: [''],
+      difficulty: [''],
+      deadline: [''],
+      url: [''],
+      uploaddate: [''], 
+-->
+
+<!-- Add Assignment Modal-->
+<clr-modal [(clrModalOpen)]="isModalVisible" [clrModalSize]="'lg'">
+    <h3 class="modal-title">Upload New Assignment</h3>
+    <div class="modal-body">
+        <form clrForm enctype="multipart/form-data"  #assign="ngForm" (ngSubmit)="add(assign)">
+            <clr-input-container>
+    <label>ID</label>
+    <input clrInput ngModel placeholder="Give a number" name="assignId" type="number" style="width:50%;" required/>
+     </clr-input-container> <br>
+  <clr-input-container>
+    <label>Creator</label>
+    <input clrInput ngModel placeholder="Who created the assignment?" name="creater"  style="width:50%;" required/>
+     </clr-input-container> <br>
+    <clr-textarea-container>
+    <label>Description</label>
+    <textarea clrTextarea  name="description"  ngModel style="width:50%;"  required></textarea>
+  </clr-textarea-container> <br>
+    <clr-input-container>  <label>Max Score</label>
+    <input clrInput placeholder="Maximum score" name="maxScore" ngModel required/>
+     </clr-input-container> <br>
+            <clr-select-container>
+                <label>Difficulty</label>
+                <select clrSelect name="difficulty"  style="width:100%;" ngModel>
+                    <option value="easy">Easy</option>
+                    <option value="medium">Medium</option>
+                    <option value="hard">Hard</option>
+                </select>
+            </clr-select-container>
+            
+          
+   <br>
+            
+        <clr-date-container>
+        <label>Deadline</label>
+        <input type="date" clrDate name="deadline" ngModel min="2020-07-20" required>
+    </clr-date-container>
+            
+             
+            
+            <!--
+            <clr-select-container>
+                <label>Difficulty</label>
+                <select clrSelect name="difficulty"  style="width:100%;" ngModel>
+                    <option value="easy">Easy</option>
+                    <option value="medium">Medium</option>
+                    <option value="hard">Hard</option>
+                </select>
+            </clr-select-container>-->
+      <!--      <button class="btn btn-outline">
+                <label style="align-content: center;">Upload File</label>
+	<input clrInput type="file"
+    #fileInput
+    (change)="onFileSelect(fileInput)" />
+</button>
+
+<span class="file-info">{{ fileInfo }}</span>
+-->
+            <!-- not working    <input name="file" type="file" #file (change)="handleFileInput($event)" />
+          <div ng-controller="MyCtrl">
+  <input type="file" ngf-select="onFileSelect($files)" multiple>
+</div>
+-->
+ <div class="modal-footer">
+        <button type="button" class="btn btn-outline" (click)="isModalVisible = false">Cancel</button>
+        <button type="submit" class="btn btn-primary" value="submit">Create</button>
+    </div>
+            </form>
+    </div>
+   
+</clr-modal>
+
+
+<!-- Add Schedule Modal -->
+
+<clr-modal [(clrModalOpen)]="isModal1Visible" [clrModalSize]="'lg'">
+    <h3 class="modal-title">Add New Schedule </h3>
+    <div class="modal-body">
+        <form clrForm>
+  <clr-input-container>
+    <label>About Event</label>
+    <input clrInput placeholder="A short intro about the event!" name="name"  style="width:50%;" required/>
+     </clr-input-container> <br>
+    
+            
+            <clr-input-container>
+                <label>Time</label>
+                 <input clrInput placeholder="HH:MM" name="time"  style="width:50%;" required/>
+            </clr-input-container>
+           <br><clr-input-container>
+        <label> Event Date</label>  <input clrInput placeholder="A short intro about the event!" name="date"  value="{{currentDate | date:'yyyy-MM-dd'}}" style="width:50%;" required/>  </clr-input-container>
+</form>
+    </div>
+    <div class="modal-footer">
+        <button type="button" class="btn btn-outline" (click)="isModal1Visible = false">Cancel</button>
+        <button type="button" class="btn btn-primary" (click)="isModal1Visible = false">Create</button>
+    </div>
+</clr-modal>
+
+
+
+
+
+
+<!-- Update Assignment Modal-->
+<clr-modal [(clrModalOpen)]="isModal2Visible" [clrModalSize]="'lg'">
+    <h3 class="modal-title">Update Assignment</h3>
+    <div class="modal-body">
+        <form clrForm enctype="multipart/form-data"  #assign="ngForm" (ngSubmit)="add(assign)">
+            <clr-input-container>
+    <label>ID</label>
+    <input clrInput ngModel placeholder="Give a number" name="assignId" type="number" style="width:50%;" required/>
+     </clr-input-container> <br>
+  <clr-input-container>
+    <label>Creator</label>
+    <input clrInput ngModel placeholder="Who created the assignment?" name="creater"  style="width:50%;" required/>
+     </clr-input-container> <br>
+    <clr-textarea-container>
+    <label>Description</label>
+    <textarea clrTextarea  name="description"  ngModel style="width:50%;"  required></textarea>
+  </clr-textarea-container> <br>
+    <clr-input-container>  <label>Max Score</label>
+    <input clrInput placeholder="Maximum score" name="maxScore" ngModel required/>
+     </clr-input-container> <br>
+            <clr-select-container>
+                <label>Difficulty</label>
+                <select clrSelect name="difficulty"  style="width:100%;" ngModel>
+                    <option value="easy">Easy</option>
+                    <option value="medium">Medium</option>
+                    <option value="hard">Hard</option>
+                </select>
+            </clr-select-container>
+   <br>
+             <clr-input-container>  <label>Deadline</label>
+    <input clrInput placeholder="yyyy-mm-dd" name="deadline" ngModel required/>
+  </clr-input-container>
+            <br>
+            <clr-select-container>
+                <label>Assignment Type</label>
+                <select clrSelect name="type"  style="width:100%;" ngModel>
+                    <option value="individual">Individual</option>
+                    <option value="team">Team</option>
+                </select>
+            </clr-select-container>
+            <br>
+             <clr-input-container>  <label>URL</label>
+    <input clrInput placeholder="folder to upload" name="url" ngModel required/>
+  </clr-input-container>
+            
+ <div class="modal-footer">
+        <button type="button" class="btn btn-outline" (click)="isModalVisible = false">Cancel</button>
+        <button type="submit" class="btn btn-primary" value="submit">Create</button>
+    </div>
+            </form>
+    </div>
+   
+</clr-modal>

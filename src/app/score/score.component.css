@@ -1,0 +1,48 @@
+.container{
+    padding: 10px 10px 10px 200px;
+}
+
+.head{
+    
+    margin-bottom: 20px;
+    background-color: white;
+    margin: 0 20px 16px;
+    padding: 12px 45px;
+    
+}
+.head h4{
+    letter-spacing: 3px;
+    font-size: 25px;
+    font-weight: bold;
+}
+table{
+    width: 80%;
+   }
+th{
+    letter-spacing: 2px;
+    font-size: 14px;
+    background: #195e83;
+    color: white;
+}
+
+.btnhead{
+     margin-bottom: 20px;
+    background-color: white;
+    margin: 0 20px 16px;
+    padding: 12px 45px;
+    justify-content: center;
+    text-align: center;
+}
+
+.dash{
+    letter-spacing: 2px;
+     border: 1px solid #195e83;
+    background: white !important;
+    color: black !important;
+    
+}
+
+.dash:hover{
+    background: #195e83 !important;
+    color: white !important;
+}

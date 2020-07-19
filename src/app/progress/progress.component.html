@@ -1,0 +1,66 @@
+<header class="header-6">
+    <div class="branding header-nav">
+         <a  class="active nav-link nav-text" style="color: white;">NCG Bootcamp</a>
+        <a href="/userhome" class="active nav-link nav-text" style="color: white;">DASHBOARD</a>
+        <a href="/assignment" class="nav-link nav-text" style="color: white;">ASSIGNMENTS</a>
+         <a href="/score" class="nav-link nav-text" style="color: white;">SCORES</a>
+        <a href="/schedule" class="nav-link nav-text" style="color: white;">SCHEDULE</a>
+        <a href="/leaderboard" class="nav-link nav-text" style="color: white;">LEADERBOARD</a>
+    
+    </div>
+    
+    <div class="header-actions">
+        <a href="javascript://" class="nav-link nav-text" style="color: white;">LOGOUT</a>
+        <a href="javascript://" class="nav-link nav-icon" aria-label="settings">
+            <clr-icon shape="cog"></clr-icon>
+            
+        </a>
+    </div>
+</header>
+
+<div class="card-header head sch" style="text-align: center;">
+   <h4> UPDATE ABOUT YOUR PROJECT PROGRESS TO MENTOR!</h4><br>
+            </div>
+<div class="container">
+    <button class="card btn btn-primary" style="letter-spacing: 2px;left: 25% !important;" (click)="isModalVisible = true">CREATE NEW COMMENT</button>
+    
+    <div class="card-header head sch" style="text-align: center;">
+   <h5>Comments you have made so far !</h5><br>
+            </div>
+    
+      <div class="card-block commentbox" *ngFor="let cmnt of comments;let i=index;">
+                <div class="card-media-block">
+                    <div class="card-text">
+                       <p> Comment : {{cmnt.comment}}</p>
+                         <p>Date added : {{cmnt.date}}</p>
+                    </div>
+                </div>
+             <button class="card btn btn-primary delbtn" type="button" (click)="deletecmnt(cmnt.commentId)"><clr-icon shape="trash"></clr-icon></button>
+            </div>
+    
+    
+</div>
+    
+<!-- Add Comment Modal -->
+
+<clr-modal [(clrModalOpen)]="isModalVisible" [clrModalSize]="'lg'">
+    <h3 class="modal-title">Add New Comment </h3>
+    <div class="modal-body">
+        <form clrForm enctype="multipart/form-data"  #assign="ngForm" (ngSubmit)="add(assign)">
+  <clr-textarea-container>
+    <label>Comment</label>
+    <textarea clrTextarea  name="progress"  ngModel style="width:50%;"  required></textarea>
+  </clr-textarea-container>
+</form>
+    </div>
+    <div class="modal-footer">
+        <button type="button" class="btn btn-outline" (click)="isModalVisible = false">Cancel</button>
+        <button type="submit" class="btn btn-primary" >Add</button>
+    </div>
+</clr-modal>
+
+
+
+
+
+

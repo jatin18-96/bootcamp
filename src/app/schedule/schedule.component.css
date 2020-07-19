@@ -1,0 +1,69 @@
+body{
+    overflow-x: hidden;
+}
+a:hover{
+    color:white !important;
+}
+
+.head{
+    
+    margin-bottom: 20px;
+   
+    border-radius: 20px;
+    border: 1px solid #eee;
+    background-color: #2772a3;
+    margin: 40px 20px 16px;
+    padding: 12px 45px;
+    width:80%;
+    color: white;
+}
+
+.sch{
+     border-color:#195e83;
+   
+}
+
+.heading{
+    margin-bottom: 10px;
+    border-color:black;
+    border-bottom: 1px solid #3f4d5f;
+    background-color: white;
+    margin: 0 8px 16px;
+    padding: 12px 45px;
+    margin-left: 20px;
+    width: 80%;
+   
+   
+}
+.heading h5{
+    font-size: 13px;
+    letter-spacing: 2px;
+}
+
+
+.head h4{
+    letter-spacing: 2px;
+    font-size: 20px;
+    margin-bottom: 20px;
+    color: white;
+}
+.assign{
+    margin-left: 20px;
+    width: 80%;
+}
+.crdhd h4, h5{
+    letter-spacing: 1px;
+    margin-top: 5px;
+}
+.crdhd h5{
+    font-size: 13px;
+    
+}
+.crdhd span{
+    font-size: 10px;
+}
+
+@media only screen and (max-width: 500px) {
+  
+}
+

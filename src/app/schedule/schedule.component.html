@@ -1,0 +1,153 @@
+<header class="header-6">
+    <div class="branding header-nav">
+        <a  class="active nav-link nav-text" style="color: white;">NCG Bootcamp</a>
+        <a href="/userhome" class="nav-link nav-text" style="color: white;">DASHBOARD</a>
+        <a href="/assignment" class="nav-link nav-text" style="color: white;">ASSIGNMENTS</a>
+         <a href="/score" class="nav-link nav-text" style="color: white;">SCORES</a>
+        <a href="/schedule" class="active nav-link nav-text" style="color: white;">SCHEDULE</a>
+        <a href="/leaderboard" class="nav-link nav-text" style="color: white;">LEADERBOARD</a>
+    </div>
+    
+    <div class="header-actions">
+        
+        
+        <a href="javascript://" class="nav-link nav-text" style="color: white;">LOGOUT</a>
+        <a href="javascript://" class="nav-link nav-icon" aria-label="settings">
+            <clr-icon shape="cog"></clr-icon>
+            
+        </a>
+    </div>
+</header>
+
+
+<div *ngFor="let schedule of current_schedule;let i=index;">
+<div class="card-header head sch" style="text-align: center;" >
+   <h4> Day {{i}} - {{schedule.day}}  </h4>
+            </div>
+<ul class="clr-timeline" >
+  <li class="clr-timeline-step disabled" *ngFor="let sch of schedule.schedules;let idx=index;">
+    <div class="clr-timeline-step-header">Start time : {{sch.startTime}}</div>
+    <clr-icon shape="dot-circle" aria-label="Not started"></clr-icon>
+    <div class="clr-timeline-step-body">
+      <span class="clr-timeline-step-header">End time : {{sch.endTime}}</span>
+      <span class="clr-timeline-step-title">Event name : {{sch.description}}</span>
+    </div>
+  </li>
+  </ul>
+</div>
+
+<!--
+<div class="card-header head sch" style="text-align: center;">
+   <h4> Day 2 (17 July, 2020) Schedule</h4>
+            </div>
+<ul class="clr-timeline">
+  <li class="clr-timeline-step disabled">
+    <div class="clr-timeline-step-header">11:59 am</div>
+    <clr-icon shape="circle" aria-label="Not started"></clr-icon>
+    <div class="clr-timeline-step-body">
+      <span class="clr-timeline-step-title">Add KMS</span>
+      <span class="clr-timeline-step-description">Root CA certificate requested.</span>
+    </div>
+  </li>
+  <li class="clr-timeline-step">
+    <div class="clr-timeline-step-header">11:59 am</div>
+    <clr-icon shape="dot-circle" aria-current="true" aria-label="Current"></clr-icon>
+    <div class="clr-timeline-step-body">
+      <span class="clr-timeline-step-title">Add KMS</span>
+      <span class="clr-timeline-step-description">
+    Root CA certificate requested. Upload it to the KMS to complete the connection.
+    
+  </span>
+    </div>
+  </li>
+  <li class="clr-timeline-step">
+    <div class="clr-timeline-step-header">11:59 am</div>
+    <clr-spinner clrMedium aria-label="In progress">Fetching data</clr-spinner>
+    <div class="clr-timeline-step-body">
+      <span class="clr-timeline-step-title">Make vCenter trust KMS</span>
+      <span class="clr-timeline-step-description">
+    Root CA certificate requested. Upload it to the KMS to complete the connection. Third sentence is very long
+    and very long.
+  </span>
+    </div>
+  </li>
+  <li class="clr-timeline-step">
+    <div class="clr-timeline-step-header">11:59 am</div>
+    <clr-icon shape="success-standard" aria-label="Completed"></clr-icon>
+    <div class="clr-timeline-step-body">
+      <span class="clr-timeline-step-title">Make KMS trust vCenter</span>
+      <span class="clr-timeline-step-description">Upload it to the KMS to complete the connection. Third
+    sentence.
+    
+  </span>
+    </div>
+  </li>
+  <li class="clr-timeline-step">
+    <div class="clr-timeline-step-header">11:59 am</div>
+    <clr-icon shape="error-standard" aria-label="Error"></clr-icon>
+    <div class="clr-timeline-step-body">
+      <span class="clr-timeline-step-title">Connected</span>
+      <span class="clr-timeline-step-description">No. It's not connected.</span>
+    </div>
+  </li>
+  </ul>
+
+
+<div class="card-header head sch" style="text-align: center;">
+   <h4> Day 3 (18 July, 2020) Schedule</h4>
+            </div>
+<ul class="clr-timeline">
+  <li class="clr-timeline-step disabled">
+    <div class="clr-timeline-step-header">11:59 am</div>
+    <clr-icon shape="circle" aria-label="Not started"></clr-icon>
+    <div class="clr-timeline-step-body">
+      <span class="clr-timeline-step-title">Add KMS</span>
+      <span class="clr-timeline-step-description">Root CA certificate requested.</span>
+    </div>
+  </li>
+  <li class="clr-timeline-step">
+    <div class="clr-timeline-step-header">11:59 am</div>
+    <clr-icon shape="dot-circle" aria-current="true" aria-label="Current"></clr-icon>
+    <div class="clr-timeline-step-body">
+      <span class="clr-timeline-step-title">Add KMS</span>
+      <span class="clr-timeline-step-description">
+    Root CA certificate requested. Upload it to the KMS to complete the connection.
+    
+  </span>
+    </div>
+  </li>
+  <li class="clr-timeline-step">
+    <div class="clr-timeline-step-header">11:59 am</div>
+    <clr-spinner clrMedium aria-label="In progress">Fetching data</clr-spinner>
+    <div class="clr-timeline-step-body">
+      <span class="clr-timeline-step-title">Make vCenter trust KMS</span>
+      <span class="clr-timeline-step-description">
+    Root CA certificate requested. Upload it to the KMS to complete the connection. Third sentence is very long
+    and very long.
+  </span>
+    </div>
+  </li>
+  <li class="clr-timeline-step">
+    <div class="clr-timeline-step-header">11:59 am</div>
+    <clr-icon shape="success-standard" aria-label="Completed"></clr-icon>
+    <div class="clr-timeline-step-body">
+      <span class="clr-timeline-step-title">Make KMS trust vCenter</span>
+      <span class="clr-timeline-step-description">Upload it to the KMS to complete the connection. Third
+    sentence.
+    
+  </span>
+    </div>
+  </li>
+  <li class="clr-timeline-step">
+    <div class="clr-timeline-step-header">11:59 am</div>
+    <clr-icon shape="error-standard" aria-label="Error"></clr-icon>
+    <div class="clr-timeline-step-body">
+      <span class="clr-timeline-step-title">Connected</span>
+      <span class="clr-timeline-step-description">No. It's not connected.</span>
+    </div>
+  </li>
+  </ul>
+-->
+
+
+
