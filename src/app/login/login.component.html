@@ -1,0 +1,69 @@
+<header class="header-6">
+    <div class="branding header-nav">
+        <a  class="active nav-link nav-text" style="color: white;">NCG Bootcamp</a>
+    </div>
+</header>
+
+<div class="content" role="main">
+  <!-- Resources -->
+  <h2>Resources</h2>
+  <p>Here are some fun links to boost you up:</p>
+  <div class="card-container">
+    <a class="card button" target="_blank" rel="noopener" href="https://angular.io/tutorial">
+        <span>Photos </span>  </a>
+    <a class="card" target="_blank" rel="noopener" href="https://angular.io/cli">
+      <span>Videos</span>
+    </a>
+  </div>
+  <!-- Next Steps -->
+  <h2>Next Steps</h2>
+  <p>Register here and wait for the Admin approval.</p>
+</div>
+<div class="container" id="container" style="align-items: center;">
+	<div class="form-container sign-in-container">
+		<form enctype="multipart/form-data"  #signup="ngForm" (ngSubmit)="register(signup)">
+			<h1 class="signh1">Sign Up</h1>
+			<br>
+            <input class="validate" type="number" placeholder="EmpID" ngModel name="employeeId" #employeeId="ngModel"  required/>
+            <!-- data-error-message not working-->
+            <label data-error-message="Required filed!"></label>
+            <input type="text" placeholder="Name" name="name" ngModel #name="ngModel"  required/>
+			<input type="text" class="validate" placeholder="Email" name="email" ngModel #email="ngModel" [pattern]="emailPattern" required/>
+            <label data-error-message="Invalid email!"></label>
+			<input type="password" class="validate" placeholder="Password" ngModel name="password" #password="ngModel"  minlength="6" required/>
+            <label [attr.data-error-message]="password.errors!=null?(password.errors.required?'Required filed!':'Minimum 6 characters needed'):''"></label>
+            <clr-select-container style="display: inline-block;">
+                <label> Select your qualification : </label>
+                 <select clrSelect name="qualification" ngModel #qualification="ngModel" required>
+                    <option value="BTech">BTech/BE</option>
+                    <option value="MTech">MTech</option>
+                </select>
+            </clr-select-container><br>
+            <clr-select-container  style="display: inline-block;">
+            <label> Select your BU : </label>
+                 <select clrSelect name="BU" ngModel #BU="ngModel"  required>
+                    <option value="cmbu">CMBU</option>
+                    <option value="nsbu">NSBU</option>
+                </select>
+           </clr-select-container>
+            <br>
+            <input type="text" placeholder="Proficiency (Ex: Java)" ngModel name="proficiency" #proficiency="ngModel"  required/>
+            <br>
+            <button [disabled]="!signup.valid" type="submit" value="submit">Sign Up </button>
+		</form>
+	</div>
+	<div class="overlay-container">
+		<div class="overlay">
+			<div class="overlay-panel overlay-right">
+				<h1>Hello, NCG!</h1>
+				<p>Enter your personal details and start journey with us</p>
+			</div>
+		</div>
+	</div>
+</div>
+<footer>
+  <div style="text-align: center;">
+    <a href="https://mdbootstrap.com/">© 2020 Copyright: VMWare</a>
+  </div>
+</footer>
+
